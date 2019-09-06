@@ -14,8 +14,10 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-	<resources mapping="/assets/**" location="/resources/assets/" />
 	<resources mapping="/images/**" location="/resources/images/" />
+	<resources mapping="/assets/**" location="/resources/assets/" />
+	<resources mapping="/imagess/**" location="/resources/imagess/" />
+	<resources mapping="/assetss/**" location="/resources/assetss/" />
 	
 	<resources mapping="/table/**" location="/resources/table/" />
 	
