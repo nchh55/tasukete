@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="global.sesoc.tasukete.dao.AdminMapper">
+
+	<select id="notice_selectAll" resultType="Notice" parameterType="Notice">
+		SELECT
+		 	noticeseq
+			,notice_title
+			,userid
+			,notice_contents
+			,notice_date
+		FROM notice
+		ORDER BY noticeseq DESC
+	</select>
+	
+	<select id="notice_selectOne" resultType="Notice" parameterType="Notice">
+		SELECT
+			noticeseq
+			,notice_title
+			,userid
+			,notice_contents
+			,notice_date
+		FROM notice
+		WHERE
+			noticeseq = #{noticeseq}
+	
+	</select>
+	
+	
+	<insert id="notice_write" parameterType="Notice">
+		INSERT INTO notice
+		(
+			noticeseq
+			,notice_title
+			,userid
+			,notice_contents
+			,notice_date
+		)
+		VALUES
+		(
+			SEQ_notice_noticeseq.nextval
+			,#{notice_title}
+			,#{userid}
+			,#{notice_contents}
+			,#{notice_date}
+		)
+	</insert>
+
+</mapper>
