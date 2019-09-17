@@ -11,7 +11,7 @@
 		<title>Elements - Editorial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="resources/assets/css/main.css" /> 
 	</head>
 	<body class="is-preload">
 
@@ -34,38 +34,22 @@
 									</ul>
 								</header>
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Elements</h1>
-									</header>
-
-									<!-- Content -->
-										<h2 id="content">Sample Content</h2>
-										<p>Praesent ac adipiscing ullamcorper semper ut amet ac risus. Lorem sapien ut odio odio nunc. Ac adipiscing nibh porttitor erat risus justo adipiscing adipiscing amet placerat accumsan. Vis. Faucibus odio magna tempus adipiscing a non. In mi primis arcu ut non accumsan vivamus ac blandit adipiscing adipiscing arcu metus praesent turpis eu ac lacinia nunc ac commodo gravida adipiscing eget accumsan ac nunc adipiscing adipiscing lorem ipsum dolor sit amet nullam veroeros adipiscing.</p>
-										<div class="row">
-											<div class="col-6 col-12-small">
-												<h3>Sem turpis amet semper</h3>
-												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed ante lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-											</div>
-											<div class="col-6 col-12-small">
-												<h3>Magna odio tempus commodo</h3>
-												<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis mi accumsan.</p>
-											</div>
-											<!-- Break -->
-											<div class="col-4 col-12-medium">
-												<h3>Interdum sapien gravida</h3>
-												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.</p>
-											</div>
-											<div class="col-4 col-12-medium">
-												<h3>Faucibus consequat lorem</h3>
-												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.</p>
-											</div>
-											<div class="col-4 col-12-medium">
-												<h3>Accumsan montes viverra</h3>
-												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.</p>
-											</div>
-										</div>
+							<!-- Content --> 
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>We want help you.<br />
+											by YONDAI Company.</h1>
+										</header>
+										<p>웹과 앱을 연동하여 어디에서든지 간편하게 도움을 요청하고 도움을 제공할 수 있는 커뮤니티입니다. <br>자신이 현재까지 요청한 목록을 볼 수 있으며 불편한 점이 있다면 24시간 언제든지 민원을 넣어서 개선시킬수 있습니다.<br>도움을 받은분들에게 평점을 주어서 실시간으로 좋은 요청자를 선별할 수 있고 가고싶은 지역의 주변 편의시설을 지도를 통해 간편하게 확인할 수 있습니다.</p>
+										<ul class="actions">
+											<li><a href="#" class="button big">Learn More</a></li>
+										</ul>
+									</div>
+									<span class="image object"> 
+										<img src="images/2.png" alt="" /> 
+									</span>
+								</section> 
 
 									<hr class="major" />
 
@@ -475,12 +459,11 @@ print 'It took ' + i + ' iterations to sort the deck.';
 									<ul>
 										<li><a href="notice">공지사항</a></li>
 										<li><a href="notice">요청목록</a></li>										
+										<li><a href="notice">칭찬하기</a></li>
 										<li><a href="notice">건의하기</a></li>
-										<li><a href="notice">편의시설</a></li>
-										<li><a href="#"></a></li>
+										<li><a href="notice">편의시설</a></li>     
 									</ul>
-								</nav>
-							
+								</nav> 							
 							<!-- Search -->       
 								<section id="search" class="alt">
 									<form method="post" action="#">

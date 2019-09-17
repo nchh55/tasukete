@@ -97,7 +97,7 @@
 									 
 										<!-- Break -->
 										<div class="col-12">
-											<textarea name="remark" id="remark" placeholder="Enter your message" rows="6"></textarea>
+											<textarea name="remark" id="remark" placeholder="기타 특이사항" rows="6"></textarea>
 										</div>
 										<!-- Break -->
 										<div class="col-12">
@@ -149,8 +149,8 @@
 									<ul>
 										<li><a href="notice">공지사항</a></li>
 										<li><a href="notice">요청목록</a></li>										
-										<li><a href="question">건의하기</a></li>
-										<li><a href="convenience">편의시설</a></li>
+										<li><a href="notice">건의하기</a></li>
+										<li><a href="notice">편의시설</a></li>
 										<li><a href="#"></a></li> 
 									</ul>
 								</nav>

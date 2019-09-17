@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>    
+<title>유저 건의사항</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<script>
+//건의하기
+$(function(){		 
+	$("#write").on("click", write);
+});	
+function write(){
+	alert("건의입력");  
+	$(".suggest").load("user/html/suggestion.html");     
+/* 	$.ajax({ 
+		 url: 'suggestionWrite'	
+		,type: 'GET'
+		,success: suggestionWrite 
+	});  */		
+} 	
+</script>
+</head>
+<body>
+	<header class="major">
+		<h2>건의사항</h2>
+	</header>
+	<div class="suggest">
+			<div>
+				 <table id="suggestion_table" class="table-wrapper">
+			 
+				</table> 
+			</div>
+			<div id="suggestionWrite" class="suggestionWrite">
+			<a href="#" id="write" class="button primary large">건의하기</a>	 	
+			</div>
+	</div>		
+</body>
+
+</html>

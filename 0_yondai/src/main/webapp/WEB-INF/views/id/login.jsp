@@ -47,39 +47,19 @@
 										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
 									</ul>
 								</header>
-
-							
-							<!-- Banner -->
-								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Hi, I’m Editorial<br />
-											by HTML5 UP</h1>
-											<p>A free and fully responsive site template</p>
-										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-										<ul class="actions special">
-											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
-								</section>
-
-							
-							<!-- Section -->
-								<section>   
-							<!-- Form --> 
-							<c:if test="${sessionScope.loginId == null }">
-								<h2>로그인</h2>  							
+						
+							<!-- form --> 
+							<br> <br> <br>
+							<c:if test="${sessionScope.loginId == null }"> 
+								<h2>로그인</h2><div style="color:red;">${message}</div>  		 					
 								<form id="home" method="post" action="login">
 									<div class="row gtr-uniform">
-										<div class="col-12">     
-											<input type="text" name="userid" id="userid" value="" placeholder="아이디" /> 											  
+										<div class="col-7">     
+											<input type="text" name="userid" id="userid" value="" placeholder="아이디" /> 
+																					  
 										</div>   
-										
-										<div class="col-12">      
+										 
+										<div class="col-7">      
 										<input type="password" name="userpwd" id="userpwd" value="" placeholder="비밀번호" />
 										</div>
 										
@@ -87,28 +67,33 @@
 										<div class="col-12">
 											<ul class="actions">
 												<li><input type="button" value="로그인" class="primary" onclick = "login();"/></li> 
-												<li><a href="signup" class="button big">회원가입</a></li>
+												<li><a href="signup" class="button big">회원가입</a></li>										
 											</ul>
 										</div>
 									</div>
-								</form>   
-							</c:if>
+								</form> 
+							</c:if>													
 							<c:if test="${sessionScope.loginId != null }"> 
-								<table border="1">
+								<table> 
 								<tr> 
-								<td>${sessionScope.loginName }님, 로그인중</td>
-								</tr>
-								<tr>
-								<td>회원번호 : ${sessionScope.num }</td>
+								<td>${sessionScope.loginName}님, 로그인중</td>
 								</tr>
 								</table> 
 								<div class="col-12">
 										<ul class="actions">
 											<li><a href="signup" class="button big">회원정보수정</a></li>
-											<li><a href="logout" class="button big">로그아웃</a></li>
+											<li><a href="logout" class="button big">로그아웃</a></li>											
 										</ul>
 								</div> 
 							</c:if> 
+								 
+								<section id="banner">
+  									
+								</section>
+
+							
+							<!-- Section -->
+								<section>   
 									<div class="posts">  
 									</div>									
 								</section>
@@ -149,10 +134,10 @@
 										<h2>메뉴</h2>
 									</header>
 									<ul>
-										<li><a href="index">공지사항</a></li>
+										<li><a href="notice">공지사항</a></li>
 										<li><a href="notice">요청목록</a></li>										
-										<li><a href="question">건의하기</a></li>
-										<li><a href="convenience">편의시설</a></li>
+										<li><a href="notice">건의하기</a></li>
+										<li><a href="notice">편의시설</a></li>
 										<li><a href="#"></a></li> 
 									</ul>
 								</nav>

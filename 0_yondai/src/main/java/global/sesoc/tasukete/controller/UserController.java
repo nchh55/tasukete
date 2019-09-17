@@ -1,5 +1,6 @@
 package global.sesoc.tasukete.controller;
 
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -9,8 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.tasukete.dao.UserRepository;
+import global.sesoc.tasukete.dto.Report;
+import global.sesoc.tasukete.dto.Request;
+import global.sesoc.tasukete.dto.Suggestion;
 import global.sesoc.tasukete.dto.Tasukete_user;
 
 
@@ -20,54 +25,52 @@ public class UserController {
 	@Autowired
 	UserRepository repository;
 	//홈화면
-	@RequestMapping(value = "start", method = RequestMethod.GET)
-	public String start(Locale locale, Model model) {
+	@RequestMapping(value = "index", method = RequestMethod.GET)
+	public String index(Locale locale, Model model) {
 
-		
-		return "notice";
+		return "index";
 	}
 	//공지사항
 	@RequestMapping(value = "notice", method = RequestMethod.GET)
 	public String notice(Locale locale, Model model) {
 
-			
-		return "notice";
+		return "index"; //임시로 지정
 	}
 	//로그인
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
 
-		
-		return "login";
+		return "id/login";
 	}
 	//로그인
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(Tasukete_user user, Model model, HttpSession session) {
-			
 		
 		Tasukete_user m = repository.selectOne(user);
-			
-			System.out.println(user);
-		String message = "";
+				
 		if(m == null) {
-			message = "로그인을 할 수 없습니다.";
+			String message = "아이디,비밀번호를 확인해주세요!";
 			model.addAttribute("message", message);
 
-			return "login";
-		} else {
+			return "id/login";
+			
+		} else if(m.getUserid().equals("admin")) {
 			session.setAttribute("loginId", m.getUserid());
 			session.setAttribute("loginName", m.getUsername());
-			
-			return "login";
-		}
+		 
+				return "redirect:ad_index";
+			}else{
+				session.setAttribute("loginId", m.getUserid());
+				session.setAttribute("loginName", m.getUsername());
+				return "user/user_index";
+			}
 		
-	}
-	
+		}
 	//아이디 중복확인 화면 요청
 	@RequestMapping(value="/idCheck", method=RequestMethod.GET)
 	public String idCheck() {
 		
-		return "idcheck";
+		return "id/idcheck";
 	}
 	//아이디 중복확인 처리 요청
 	@RequestMapping(value="/idCheck", method=RequestMethod.POST)
@@ -76,13 +79,13 @@ public class UserController {
 			model.addAttribute("message", "ok");
 			model.addAttribute("userid", userid);
 		
-		return "idcheck";
+		return "id/idcheck";
 	}
 	//회원가입
 	@RequestMapping(value="/signup", method=RequestMethod.GET)
 	public String signup() {
 					
-		return "signup";
+		return "id/signup";
 	}
 		
 	//회원가입 처리 요청
@@ -91,7 +94,7 @@ public class UserController {
 					
 		int result = repository.signup(user);
 			
-		return "notice";
+		return "redirect:login";
 	}
 	//로그아웃
 	@RequestMapping (value="logout", method=RequestMethod.GET)
@@ -99,7 +102,7 @@ public class UserController {
 			
 		session.invalidate();
 			
-		return "login";
+		return "redirect:index";
 		}
 	
 }

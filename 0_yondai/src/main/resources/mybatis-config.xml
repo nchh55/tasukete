@@ -4,10 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="global.sesoc.tasukete.dto.Tasukete_user" alias="Tasukete_user"/>
+		<typeAlias type="global.sesoc.tasukete.dto.Notice" alias="Notice" />
+		<typeAlias type="global.sesoc.tasukete.dto.Tasukete_user" alias="Tasukete_user" />
+		<typeAlias type="global.sesoc.tasukete.dto.Suggestion" alias="Suggestion" />
+		<typeAlias type="global.sesoc.tasukete.dto.Request" alias="Request" />
+		<typeAlias type="global.sesoc.tasukete.dto.Report" alias="Report" />
 	</typeAliases>
 	
-	<mappers> 
+	<mappers>
+		<mapper resource="mappers/AdminMapper.xml" />
 		<mapper resource="mappers/UserMapper.xml" />
 	</mappers>
 </configuration>

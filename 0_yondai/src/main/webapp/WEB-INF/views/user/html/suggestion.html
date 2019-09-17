@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>건의사항 올리기</title>
+</head>
+<body> 
+<h3>건의하기</h3>
+<form method="post" action="suggestion">
+	<div class="row gtr-uniform">
+		<div class="col-12">	
+			<input type="text" name="userid" id="userid" value="" placeholder="ID" />
+		</div>
+		<div class="col-12">	
+			<input type="text" name="suggestion_title" id="suggestion_title" value="" placeholder="title" /> 
+		</div>
+		<div class="col-12">	 
+			접수 일시 : <input type="date" name="reception_date" id="reception_date" value="" placeholder="date" />
+		</div>    
+		<div class="col-12">
+			<textarea name="suggestion_contents" id="suggestion_contents" placeholder="건의내용" rows="6"></textarea>
+		</div>
+		<div class="col-12">
+			<ul class="actions">
+				<li><input type="submit" value="건의등록" class="primary" /></li>
+				<li><input type="reset" value="취소" /></li>
+			</ul>
+		</div>
+	</div>  
+</form>  
+</body>
+</html>

@@ -4,10 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="global.sesoc.tasukete.dao.UserMapper">
+<!-- 로그인 -->
 <select id="selectOne" resultType="Tasukete_user" parameterType="Tasukete_user">
 SELECT
 	userid,
-	userpwd
+	userpwd,
+	username
 FROM 
 	Tasukete_user
 WHERE 
@@ -45,6 +47,89 @@ AND
       #{remark}
 	)
 	</insert>
-
+	<!-- 건의사항 -->
+	<select id="suggestion_selectAll" resultType="Suggestion" parameterType="Suggestion">
+		SELECT 
+			suggestionseq
+			,suggestion_title
+			,userid
+			,suggestion_contents
+			,suggestion_result
+			,reception_date
+			,completion_date
+			,progress_flag
+		FROM Suggestion
+		
+	</select>
+	<!-- 요청목록 -->
+	<select id="request_selectAll" resultType="Request" parameterType="Request">
+		SELECT 
+			requestseq
+			,request_contents
+			,userid
+			,support_id
+			,request_location
+			,support_location
+			,request_date
+			,completion_date
+			,disabled
+			,pregnancy
+			,request_flag
+		FROM Request
+		
+	</select>
+	<!-- 신고하기 -->
+	<insert id="report" parameterType="Report">
+	INSERT INTO report(
+	reportseq,
+	report_title,
+	userid,
+	report_contents,
+	report_date
+	)
+	
+	VALUES
+	(
+	SEQ_report_reportseq.nextval,
+	#{report_title},
+	#{userid},
+	#{report_contents},
+	#{report_date}
+	)
+	</insert>
+	<!-- 건의 글 올리기-->
+	<insert id="suggestion" parameterType="Suggestion">
+	INSERT INTO suggestion(
+	suggestionseq,
+	userid,
+	suggestion_title,
+	reception_date,
+	suggestion_contents
+	)
+	
+	VALUES
+	(
+	SEQ_suggestion_suggestionseq.nextval,
+	#{userid},
+	#{suggestion_title},
+	#{reception_date},
+	#{suggestion_contents}
+	)
+	</insert>
+		<!-- 건의디테일 -->
+	<select id="selectOne" parameterType="int" resultType="Suggestion">
+		SELECT 
+			boardseq,
+			userid,
+			title,
+			content,
+			to_char(regdate, 'YYYY-MM-DD') as regdate,
+			viewcount,
+			favorite,
+			originalfile,
+			savedfile
+		FROM board 
+		WHERE boardseq = #{boardseq}
+	</select>
  
 </mapper>

@@ -277,7 +277,8 @@ CREATE TABLE tasukete_user
 	compliment_count number DEFAULT 0,
 	-- 매칭에 대한 상태정보
 	matching_flag varchar2(20) DEFAULT '0',
-	PRIMARY KEY (userid)
+	PRIMARY KEY (userid),
+	remark varchar2(2000)
 );
 
 
