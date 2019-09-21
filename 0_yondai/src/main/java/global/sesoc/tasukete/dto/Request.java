@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Request {
+	private String requestseq;
 	private String request_contents;
 	private String userid;
 	private String support_id;

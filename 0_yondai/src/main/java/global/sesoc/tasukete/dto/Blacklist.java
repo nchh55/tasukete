@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Blacklist {
+	private String userid;
 	private String blacklist_contents;
 	private String blacklist_deadline;
 	

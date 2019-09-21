@@ -55,7 +55,7 @@ CREATE TABLE blacklist
 	-- 회원의 아이디
 	userid varchar2(50) NOT NULL,
 	-- 블랙리스트 내용
-	blacklist_conrtents varchar2(2000),
+	blacklist_contents varchar2(2000),
 	-- 블랙리스트 기간제한
 	blacklist_deadline varchar2(40),
 	PRIMARY KEY (userid)
@@ -257,28 +257,21 @@ CREATE TABLE tasukete_user
 (
 	-- 회원의 아이디
 	userid varchar2(50) NOT NULL,
-	-- 회원의 비밀번호
-	userpwd varchar2(50) NOT NULL,
+	-- 회원의 가상번호
+	uservnum varchar2(50),
 	-- 회원의 이름
 	username varchar2(50) NOT NULL,
 	-- 회원의 생일
 	userbirth varchar2(50) NOT NULL,
-	-- 회원의 이메일
-	useremail varchar2(100) NOT NULL,
 	-- 회원의 핸드폰번호
 	userphone varchar2(50) NOT NULL,
-	-- 회원의 주소
-	useraddress varchar2(300) NOT NULL,
 	-- 장애인 여부
 	disabled varchar2(10) NOT NULL,
-	-- 임신 여부
-	pregnancy varchar2(10) NOT NULL,
 	-- 칭찬 횟수
 	compliment_count number DEFAULT 0,
 	-- 매칭에 대한 상태정보
 	matching_flag varchar2(20) DEFAULT '0',
-	PRIMARY KEY (userid),
-	remark varchar2(2000)
+	PRIMARY KEY (userid)
 );
 
 

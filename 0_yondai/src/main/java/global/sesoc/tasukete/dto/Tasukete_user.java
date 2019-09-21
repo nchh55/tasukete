@@ -9,15 +9,35 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Tasukete_user {
 	private String userid;
-	private String userpwd;
+	private String uservnum;
 	private String username;
 	private String userbirth;
-	private String useremail;
 	private String userphone;
-	private String useraddress;
 	private String disabled;
-	private String pregnancy;
 	private int compliment_count;
 	private String matching_flag;
-	private String remark;
+	
+	public Tasukete_user(String userid, String userphone) {
+		this.userid = userid;
+		this.userphone = userphone;
+	}
+
+	public Tasukete_user(String userid, String username, String userbirth, String userphone) {
+		this.userid = userid;
+		this.username = username;
+		this.userbirth = userbirth;
+		this.userphone = userphone;
+	}
+
+	public Tasukete_user(String userid, String username, String userbirth, String userphone, String disabled) {
+		this.userid = userid;
+		this.username = username;
+		this.userbirth = userbirth;
+		this.userphone = userphone;
+		this.disabled = disabled;
+	}
+	
+	
+	
+	
 }

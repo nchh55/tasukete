@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Compliment {
+	private String complimentseq;
 	private String compliment_title;
 	private String userid;
 	private String compliment_contents;

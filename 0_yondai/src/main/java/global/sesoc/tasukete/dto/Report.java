@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Report {
+	private String reportseq;
 	private String report_title;
 	private String userid;
 	private String report_contents;

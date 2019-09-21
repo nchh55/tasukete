@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Suggestion {
+	private String suggestionseq;
 	private String suggestion_title;
 	private String userid;
 	private String suggestion_contents;

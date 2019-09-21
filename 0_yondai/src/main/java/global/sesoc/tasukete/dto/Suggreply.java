@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Suggreply {
+	private String suggreplyseq;
+	private String suggestionseq;
 	private String userid;
 	private String suggreply_contents;
 	private String suggreply_date;
